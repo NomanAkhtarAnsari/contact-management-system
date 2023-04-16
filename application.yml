@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/contact_management_system # contact_management_system is the org.example.contactManagementSystem.database name
+    username: { username }
+    password: { password }
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    changelog: classpath:/database/changelog/database-changelog-schema.xml
+  profiles:
+    active: prod
+
+logging:
+  file: /var/tmp/contact-management-system.org.example.contactManagementSystem.log
+  level:
+    #root: DEBUG #If you enable this you will see lots of logs but they are quite educational. Try out
+    filter.RequestLoggingFilter: DEBUG
+
+server:
+  port: { port }
+
+jwt-configuration:
+  jwtSecret: { jwtSecret }
+  jwtTokenValidity: 3600000
+
+ip-configuration:
+  whitelistedIps: { ip1, ip2 }
+
+general-configuration:
+  url: { serverUrl }
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
