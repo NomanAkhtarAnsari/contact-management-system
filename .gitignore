@@ -6,6 +6,6 @@
 
 
 # Profiles
-application-local.yml
+application-prod.yml
 
 target/
